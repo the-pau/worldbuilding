@@ -21,3 +21,4 @@ You have to get a pull request approved by one other member before merging, that
 4. Repeat above steps until youre done your contribution, then go to github, select your branch from the dropdown on the code browser page, and then press the create request button.
 5. Title (and label) the pull request appropriately, add a reviewer if you want, and a description.
 6. After at least one person has accepted the request, you can squash and merge into master
+
