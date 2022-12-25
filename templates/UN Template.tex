@@ -1,0 +1,73 @@
+\newcommand{\documenttitle}{This is the document title.}
+\newcommand{\categoryletter}{A}
+\newcommand{\doctypeabbreviation}{RES}
+\newcommand{\docnumber}{92}
+\newcommand{\docsubnumber}{1}
+\newcommand{\documentdate}{31 January 2054}
+\newcommand{\preambletext}{\paragraph{This is supposed to be a short summary and outline of what the document contains, usually includes the goal of the session, discussion, debate, maybe some rough explanation of why it exists.}\paragraph{Because this is a one column table, newlines work as expected using \textbackslash\textbackslash, however, automatic indentation of new paragraphs and vertical separation do not. }
+}
+\documentclass{report}
+\usepackage{svg}
+\usepackage{tabularx}
+\usepackage{svg-extract}
+\usepackage{makecell}
+\usepackage[a4paper,% Set the height and width of the paper
+includehead,margin=2cm,
+nomarginpar,% We don't want any margin paragraphs
+textwidth=10cm,% Set \textwidth to 10cm
+headheight=10mm,% Set \headheight to 10mm
+]{geometry}
+\usepackage{fancyhdr}
+\begin{document}
+% Set the page style to "fancy"...
+\pagestyle{fancy}
+%... then configure it.
+\fancyhead{} % clear all header fields
+\fancyhead[LO,LE]{\textbf{\hskip 40pt \large United Nations}}
+\fancyhead[RO,RE]{{\huge \categoryletter\normalsize /\doctypeabbreviation /\docnumber /\docsubnumber}}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,LO]{\textbf{\scriptsize \thepage /maxpage}}
+% Some content:
+\begin{tabularx}{\textwidth}{p{3cm} p{9cm} p{5cm}}
+\includesvg[scale=.2]{UN_emblem_blue.svg} & \begin{tabular}{l}
+\huge \textbf{General Assembly}\\\\\\\\\\
+\end{tabular} &  \begin{tabular}{r}
+Distr.: General\\\documentdate\\\\\\\\\\
+\end{tabular}
+\end{tabularx}
+\hrule height 0.2mm
+\ \\
+\scriptsize \textbf{Two hundred seventy-fifth session}\\
+Agenda items A and B\\
+\\
+\begin{center}
+\Large \textbf{BOILERPLATE TITLE (stuff like adopted by GA on date)}\\
+\ \\
+\normalsize [\textit{references to other resolutions in square brackets}]
+\end{center}
+\large
+\begin{tabularx}{\textwidth}{p{2cm} p{12cm} p{2cm}}
+& \begin{tabular}{p{1cm} p{11cm}}
+\textbf{\docnumber /\docsubnumber.} & \textbf{\documenttitle}
+\end{tabular}\\
+\\
+&\indent\textit{The General Assembly}\\
+\\
+&\indent\textit{Adopts} the following outcome document of the United Nations summit for the adoption of the whateverthefuck:\\
+\\
+&\textbf{\documenttitle}\\
+\\
+&\footnotesize \textbf{Preamble}\\
+\\
+&\begin{tabular}{p{12cm}}
+\preambletext
+\end{tabular} 
+\end{tabularx}
+\newpage
+\fancyhead{}
+\fancyhead[LO,LE]{{\scriptsize RESOLUTION NUMBER}}
+\fancyhead[RO,RE]{{\scriptsize RESOLUTION TITLE}}
+\fancyfoot{}
+\fancyfoot[LE,LO]{\textbf{\scriptsize \thepage /maxpage}}
+This is page 2.
+\end{document}
