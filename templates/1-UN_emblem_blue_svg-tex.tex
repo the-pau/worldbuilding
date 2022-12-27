@@ -10,9 +10,15 @@
 \newcommand {\doctypeabbreviation }{RES}
 \newcommand {\docnumber }{92}
 \newcommand {\docsubnumber }{1}
+\newcommand {\sessionnumber }{Two hundred seventy-fifth}
+\newcommand {\agendaitems }{36 and 933}
+\newcommand {\refs }{references}
+\newcommand {\boilerplatetitle }{BOILERPLATE TITLE (stuff like adopted by GA on date)}
+\newcommand {\nl }{\\\vspace {0mm}\hspace {5mm}}
 \newcommand {\documentdate }{31 January 2054}
-\newcommand {\preambletext }{\paragraph {This is supposed to be a short summary and outline of what the document contains, usually includes the goal of the session, discussion, debate, maybe some rough explanation of why it exists.}\paragraph {Because this is a one column table, newlines work as expected using \textbackslash \textbackslash , however, automatic indentation of new paragraphs and vertical separation do not. }}
-\documentclass {report}
+\newcommand {\preambletext }{This is supposed to be a short summary and outline of what the document contains, usually includes the goal of the session, discussion, debate, maybe some rough explanation of why it exists.\nl Because this is a one column table, newlines work as expected using \textbackslash \textbackslash , however, automatic indentation of new paragraphs and vertical separation do not. That is what the \texttt {\textbackslash nl} command is for, it acts as the newline including vertical and horizontal spacing.}
+\documentclass {article}
+\usepackage {zref-totpages}
 \usepackage {svg}
 \usepackage {tabularx}
 \usepackage {svg-extract}
@@ -24,6 +30,7 @@ textwidth=10cm,
 headheight=10mm,
 ]{geometry}
 \usepackage {fancyhdr}
+\usepackage {barcodes}
 
 \usepackage{svg-extract}
 \svgsetup{scale=.2}

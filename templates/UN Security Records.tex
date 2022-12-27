@@ -1,0 +1,83 @@
+\newcommand{\documenttitle}{This is the document title.}
+\newcommand{\categoryletter}{S}
+\newcommand{\doctypeabbreviation}{INF}
+\newcommand{\docnumber}{192}
+\newcommand{\sessionnumber}{Two hundred seventy-fifth}
+\newcommand{\agendaitems}{36 and 933}
+\newcommand{\refs}{references}
+\newcommand{\boilerplatetitle}{BOILERPLATE TITLE (stuff like adopted by GA on date)}
+%DO NOT CHANGE
+\newcommand{\nl}{\\\vspace{0mm}\hspace{5mm}}
+
+%DO CHANGE
+\newcommand{\documentdate}{31 January 2054}
+\newcommand{\barcodetext}{331-7300(A)}
+\newcommand{\preambletext}{This is supposed to be a short summary and outline of what the document contains, usually includes the goal of the session, discussion, debate, maybe some rough explanation of why it exists.\nl
+Because this is a one column table, newlines work as expected using \textbackslash\textbackslash, however, automatic indentation of new paragraphs and vertical separation do not. That is what the \texttt{\textbackslash nl} command is for, it acts as the newline including vertical and horizontal spacing.
+}
+
+
+\documentclass{article}
+\usepackage{zref-totpages}
+\usepackage{svg}
+\usepackage{tabularx}
+\usepackage{svg-extract}
+\usepackage{makecell}
+\usepackage[a4paper,% Set the height and width of the paper
+includehead,top=2cm,
+  bottom=3cm,
+  left=2cm,
+  right=2cm,
+nomarginpar,% We don't want any margin paragraphs
+textwidth=10cm,% Set \textwidth to 10cm
+headheight=10mm,% Set \headheight to 10mm
+]{geometry}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\setsansfont{[fre3of9x.ttf]}
+
+
+
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand{\headrulewidth}{0mm}
+\fancyhead[R]{\large \categoryletter /\doctypeabbreviation /\docnumber}
+\vspace*{5cm}
+\noindent\Huge Resolutions and Decisions
+\vspace*{3mm}\\
+\noindent\Huge of the Security Council
+\vspace*{8mm}\\
+\Large 23 February 2058 - 19 June 2058
+\vspace*{3cm}\\
+\Large Security Council\\
+\normalsize Official Records\vspace*{3mm}\\
+\includesvg[scale=.15]{UN_emblem_black.svg}\vspace*{3mm}\\
+\noindent  United States $\bullet$ New York, 2060
+\newpage
+
+
+
+\pagestyle{fancy}
+%... then configure it.
+\fancyhead{} % clear all header fields
+\fancyhead[LO,LE]{\textbf{\hskip 40pt \large United Nations}}
+\fancyhead[RO,RE]{{\huge \categoryletter\normalsize /\doctypeabbreviation /\docnumber }}
+
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,LO]{\small\texttt{\barcodetext}\\
+
+\vspace*{-6pt}
+\huge \textbf{\textsf{\barcodetext}}}
+% Some content:
+\begin{tabularx}{\textwidth}{p{18mm} p{9cm} p{46mm}}
+\includesvg[scale=.15]{UN_emblem_black.svg} & \vspace*{-10mm}\begin{tabular}{l}
+\huge \textbf{General Assembly}
+\end{tabular} & \vspace*{-11mm}\makecell[r]{
+Distr.: General\\
+\documentdate}
+\end{tabularx}
+\vspace*{7mm}
+
+\end{document}

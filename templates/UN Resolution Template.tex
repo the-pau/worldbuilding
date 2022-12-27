@@ -1,0 +1,110 @@
+%DO NOT CHANGE
+\newcommand{\nl}{\\\vspace{0mm}\hspace{5mm}}
+
+%DO CHANGE
+\newcommand{\discussingbody}{General Assembly}
+\newcommand{\meetingnumber}{10336\textsuperscript{th}}
+%A seems to mean general assembly, S is for security council
+\newcommand{\categoryletter}{A}
+\newcommand{\doctypeabbreviation}{RES}
+\newcommand{\resolutionnumber}{4435}
+\newcommand{\docday}{31}
+\newcommand{\docmonth}{January}
+\newcommand{\docyear}{2054}
+%The resolutions i looked at had no barcodes. Either delete the serial number or leave it, it kinda looks better with the barcode
+\newcommand{\barcodetext}{331-7300(A)}
+\newcommand{\preambletext}{This is supposed to be a short summary and outline of what the document contains, usually includes the goal of the session, discussion, debate, maybe some rough explanation of why it exists.\nl
+Because this is a one column table, newlines work as expected using \textbackslash\textbackslash, however, automatic indentation of new paragraphs and vertical separation do not. That is what the \texttt{\textbackslash nl} command is for, it acts as the newline including vertical and horizontal spacing.
+}
+
+
+\documentclass{article}
+\usepackage{zref-totpages}
+\usepackage{svg}
+\usepackage{tabularx}
+\usepackage{svg-extract}
+\usepackage{makecell}
+\usepackage[a4paper,% Set the height and width of the paper
+includehead,top=2cm,
+  bottom=3cm,
+  left=2cm,
+  right=2cm,
+nomarginpar,% We don't want any margin paragraphs
+textwidth=10cm,% Set \textwidth to 10cm
+headheight=10mm,% Set \headheight to 10mm
+]{geometry}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\setsansfont{[fre3of9x.ttf]}
+\usepackage{lipsum}
+\usepackage[skins,breakable]{tcolorbox}
+
+
+\begin{document}
+% Set the page style to "fancy"...
+\pagestyle{fancy}
+%... then configure it.
+\fancyhead{}
+\fancyhead[LO,LE]{{\scriptsize \textbf{\categoryletter /\doctypeabbreviation /\resolutionnumber\ (\docyear)}}}
+\fancyhead[RO,RE]{{\scriptsize \textbf{Resolution \resolutionnumber} \Large \textsf{\categoryletter -\doctypeabbreviation -\resolutionnumber -\thepage}}}
+\fancyfoot{}
+\fancyfoot[LE,LO]{\textbf{\scriptsize \thepage /\ztotpages}}
+
+
+\fancypagestyle{firststyle}
+{
+	\fancyhead{} % clear all header fields
+	\fancyhead[L]{\textbf{\hskip 40pt \large United Nations}}
+	\fancyhead[R]{{\huge \categoryletter\normalsize /\doctypeabbreviation\ \resolutionnumber\ (\docyear)}}
+	\fancyfoot[L]{\small\texttt{\barcodetext}\\
+}
+\thispagestyle{firststyle}
+\vspace*{-6pt}
+\huge \textbf{\textsf{\barcodetext}}}
+% Some content:
+\begin{tabularx}{\textwidth}{p{12mm} p{72mm} p{46mm}}
+\vspace*{-10mm}\includesvg[scale=.13]{UN_emblem_black.svg} & \vspace*{-8mm}\begin{tabular}{l}
+\huge \textbf{\scalebox{.8}[1.0]{\discussingbody}}
+\end{tabular} & \vspace*{-7mm}\makecell[r]{
+Distr.: General\\
+\docday\ \docmonth\ \docyear}
+\end{tabularx}
+\vspace*{7mm}
+\hrule height 0.5mm
+\vspace{2mm}
+\begin{tcolorbox}[
+  blanker,
+  width=12cm,enlarge left by=25mm,
+  before skip=6pt,
+  breakable,
+  overlay unbroken and first={%
+    \node[inner sep=0pt,outer sep=0pt,text width=0.33\textwidth,
+      align=none,
+      below right]
+      at ([xshift=12mm]frame.north west)
+  {
+  };}]
+\Large \textbf{Resolution \resolutionnumber\ (\docyear)}
+\vspace{4mm}\\
+\normalsize \textbf{Adopted by the \discussingbody\ at its \meetingnumber\ meeting, on \docday\ \docmonth\ \docyear}\\
+\ \\
+\normalsize \textit{\indent The \discussingbody,}\\\nl
+% =========================================================
+% START OF RESOLUTION TEXT
+% CHECK THE UN DOCUMENTS FOR GENERAL FORMATTING
+% (MOST) ARE FREELY AVAILABLE
+% =========================================================
+\textit{Requesting} \lipsum[2]\\\nl
+\textit{Condemning} \lipsum[3]\\\nl
+\textit{Guided} \lipsum[1]\\\nl
+\textit{Reiterating} \lipsum[2]\\\nl
+\textit{Fromtherubbing} \lipsum[5]\\\nl
+% =========================================================
+% END OF RESOLUTION TEXT
+% =========================================================
+\end{tcolorbox}
+
+
+ 
+
+\end{document}

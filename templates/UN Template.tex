@@ -3,21 +3,43 @@
 \newcommand{\doctypeabbreviation}{RES}
 \newcommand{\docnumber}{92}
 \newcommand{\docsubnumber}{1}
+\newcommand{\sessionnumber}{Two hundred seventy-fifth}
+\newcommand{\agendaitems}{36 and 933}
+\newcommand{\refs}{references}
+\newcommand{\boilerplatetitle}{BOILERPLATE TITLE (stuff like adopted by GA on date)}
+%DO NOT CHANGE
+\newcommand{\nl}{\\\vspace{0mm}\hspace{5mm}}
+
+%DO CHANGE
 \newcommand{\documentdate}{31 January 2054}
-\newcommand{\preambletext}{\paragraph{This is supposed to be a short summary and outline of what the document contains, usually includes the goal of the session, discussion, debate, maybe some rough explanation of why it exists.}\paragraph{Because this is a one column table, newlines work as expected using \textbackslash\textbackslash, however, automatic indentation of new paragraphs and vertical separation do not. }
+\newcommand{\barcodetext}{331-7300(A)}
+\newcommand{\preambletext}{This is supposed to be a short summary and outline of what the document contains, usually includes the goal of the session, discussion, debate, maybe some rough explanation of why it exists.\nl
+Because this is a one column table, newlines work as expected using \textbackslash\textbackslash, however, automatic indentation of new paragraphs and vertical separation do not. That is what the \texttt{\textbackslash nl} command is for, it acts as the newline including vertical and horizontal spacing.
 }
-\documentclass{report}
+
+
+\documentclass{article}
+\usepackage{zref-totpages}
 \usepackage{svg}
 \usepackage{tabularx}
 \usepackage{svg-extract}
 \usepackage{makecell}
 \usepackage[a4paper,% Set the height and width of the paper
-includehead,margin=2cm,
+includehead,top=2cm,
+  bottom=3cm,
+  left=2cm,
+  right=2cm,
 nomarginpar,% We don't want any margin paragraphs
 textwidth=10cm,% Set \textwidth to 10cm
 headheight=10mm,% Set \headheight to 10mm
 ]{geometry}
 \usepackage{fancyhdr}
+\usepackage{fontspec}
+\setsansfont{[fre3of9x.ttf]}
+
+
+
+
 \begin{document}
 % Set the page style to "fancy"...
 \pagestyle{fancy}
@@ -25,25 +47,30 @@ headheight=10mm,% Set \headheight to 10mm
 \fancyhead{} % clear all header fields
 \fancyhead[LO,LE]{\textbf{\hskip 40pt \large United Nations}}
 \fancyhead[RO,RE]{{\huge \categoryletter\normalsize /\doctypeabbreviation /\docnumber /\docsubnumber}}
+
 \fancyfoot{} % clear all footer fields
-\fancyfoot[LE,LO]{\textbf{\scriptsize \thepage /maxpage}}
+\fancyfoot[LE,LO]{\small\texttt{\barcodetext}\\
+
+\vspace*{-6pt}
+\huge \textbf{\textsf{\barcodetext}}}
 % Some content:
-\begin{tabularx}{\textwidth}{p{3cm} p{9cm} p{5cm}}
-\includesvg[scale=.2]{UN_emblem_blue.svg} & \begin{tabular}{l}
-\huge \textbf{General Assembly}\\\\\\\\\\
-\end{tabular} &  \begin{tabular}{r}
-Distr.: General\\\documentdate\\\\\\\\\\
-\end{tabular}
+\begin{tabularx}{\textwidth}{p{18mm} p{9cm} p{46mm}}
+\includesvg[scale=.15]{UN_emblem_black.svg} & \vspace*{-10mm}\begin{tabular}{l}
+\huge \textbf{General Assembly}
+\end{tabular} & \vspace*{-11mm}\makecell[r]{
+Distr.: General\\
+\documentdate}
 \end{tabularx}
-\hrule height 0.2mm
+\vspace*{7mm}
+\hrule height 0.5mm
 \ \\
-\scriptsize \textbf{Two hundred seventy-fifth session}\\
-Agenda items A and B\\
+\footnotesize \textbf{\sessionnumber\ session}\\
+Agenda items \agendaitems\\
 \\
 \begin{center}
-\Large \textbf{BOILERPLATE TITLE (stuff like adopted by GA on date)}\\
+\Large \textbf{\boilerplatetitle}\\
 \ \\
-\normalsize [\textit{references to other resolutions in square brackets}]
+\normalsize [\textit{\refs}]
 \end{center}
 \large
 \begin{tabularx}{\textwidth}{p{2cm} p{12cm} p{2cm}}
@@ -65,9 +92,16 @@ Agenda items A and B\\
 \end{tabularx}
 \newpage
 \fancyhead{}
-\fancyhead[LO,LE]{{\scriptsize RESOLUTION NUMBER}}
-\fancyhead[RO,RE]{{\scriptsize RESOLUTION TITLE}}
+\fancyhead[LO,LE]{{\scriptsize \textbf{\categoryletter /\doctypeabbreviation /\docnumber /\docsubnumber}}}
+\fancyhead[RO,RE]{{\scriptsize \textbf{\documenttitle}} \hspace{4cm}}
 \fancyfoot{}
-\fancyfoot[LE,LO]{\textbf{\scriptsize \thepage /maxpage}}
-This is page 2.
+\fancyfoot[LE,LO]{\textbf{\scriptsize \thepage /\ztotpages}}
+\newgeometry{left=4cm, right=4cm, bottom=2cm}
+i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why \\
+
+i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why \\
+
+i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going\\
+
+i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why i am going and i dont know why 
 \end{document}
